@@ -2,14 +2,19 @@
 
 [![GitHub Build Status](https://github.com/cisagov/action-blacken-python2/workflows/build/badge.svg)](https://github.com/cisagov/action-blacken-python2/actions)
 
-This is a skeleton project that can be used to quickly get a new
-[cisagov](https://github.com/cisagov) [GitHub composite
-action](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions#composite-actions)
-project started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and [GitHub
-Actions](https://github.com/features/actions) configurations
-appropriate for the major languages that we use.
+This is a [GitHub Docker container action](https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action#introduction)
+to format Python 2 source code using[`black`](https://github.com/psf/black).
+
+> [!WARNING]
+> This action is written to make it easier to format Python 2 source code, but
+> `black` will format *any* Python code in a project this action is run against.
+
+<!-- Hack to work around markdownlint's MD028/no-blanks-blockquote rule. -->
+
+> [!NOTE]
+> Changes made by this action are only available for the workflow job that runs this
+> action. A consuming workflow job would need to commit and push the modified
+> files for them to persist.
 
 ## Usage ##
 
@@ -33,15 +38,13 @@ None.
 
 ### Sample GitHub Actions workflow ###
 
-This GitHub Action only prints a notify annotation on the runner and
-therefore requires no permissions.
+This GitHub action requires no permissions for its functionality.
 
 ```yml
 ---
 name: The workflow
 
 on:
-  pull_request:
   push:
 
 jobs:
@@ -50,16 +53,11 @@ jobs:
     permissions: {}
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        uses: cisagov/action-blacken-python2@3941c019a43e9726231b19390126b37ffda86f58 # v1.0.1
+      - name: Checkout the Python 2 project
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: Format the Python 2 project
+        uses: cisagov/action-blacken-python2@v0.0.1
 ```
-
-## New Repositories from a Skeleton ##
-
-Please see our [Project Setup guide](https://github.com/cisagov/development-guide/tree/develop/project_setup)
-for step-by-step instructions on how to start a new repository from
-a skeleton. This will save you time and effort when configuring a
-new repository!
 
 ## Contributing ##
 
