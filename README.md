@@ -1,6 +1,6 @@
-# skeleton-action-composite #
+# action-blacken-python2 #
 
-[![GitHub Build Status](https://github.com/cisagov/skeleton-action-composite/workflows/build/badge.svg)](https://github.com/cisagov/skeleton-action-composite/actions)
+[![GitHub Build Status](https://github.com/cisagov/action-blacken-python2/workflows/build/badge.svg)](https://github.com/cisagov/action-blacken-python2/actions)
 
 This is a skeleton project that can be used to quickly get a new
 [cisagov](https://github.com/cisagov) [GitHub composite
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        uses: cisagov/skeleton-action-composite@3941c019a43e9726231b19390126b37ffda86f58 # v1.0.1
+        uses: cisagov/action-blacken-python2@3941c019a43e9726231b19390126b37ffda86f58 # v1.0.1
 ```
 
 ## New Repositories from a Skeleton ##
