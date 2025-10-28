@@ -1,23 +1,11 @@
 ---
 author: Cybersecurity and Infrastructure Security Agency
 branding:
-  color: blue
-  icon: help-circle
-description: Skeleton GitHub composite action.
-name: Skeleton
-
-# We use a shell argument for each step that provides the same guardrails we
-# would have in our bash scripts. The `-Eueo pipefail` sets errtrace, nounset,
-# errexit, and pipefail. The `-x` will print all commands as they are run. We
-# are currently unable to set this as a default (like we can in workflows) so
-# this must be added to each step that runs shell commands. Please see the
-# following GitHub discussion that requests this feature for any status
-# updates: https://github.com/orgs/community/discussions/18597
+  color: black
+  icon: align-justify
+description: Format Python 2 source code with black.
+name: Blacken Python 2
 
 runs:
-  using: composite
-  steps:
-    - id: my-id
-      name: Say hello
-      run: "echo ::notice:: Hello, world!"
-      shell: bash -Eueo pipefail -x {0}
+  using: docker
+  image: Dockerfile
