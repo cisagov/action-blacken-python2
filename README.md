@@ -1,6 +1,8 @@
 # action-blacken-python2 #
 
 [![GitHub Build Status](https://github.com/cisagov/action-blacken-python2/workflows/build/badge.svg)](https://github.com/cisagov/action-blacken-python2/actions)
+[![License](https://img.shields.io/github/license/cisagov/action-blacken-python2)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/action-blacken-python2/workflows/CodeQL/badge.svg)](https://github.com/cisagov/action-blacken-python2/actions/workflows/codeql-analysis.yml)
 
 This is a [GitHub Docker container action](https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action#introduction)
 to format Python 2 source code using [`black`](https://github.com/psf/black).
