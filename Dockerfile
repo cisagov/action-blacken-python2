@@ -16,17 +16,15 @@ ENV PYTHON_BLACK_VERSION=21.12b0
 ENV PYTHON_CLICK_VERSION=8.0.4
 ENV PYTHON_PIP_VERSION=25.2
 ENV PYTHON_SETUPTOOLS_VERSION=80.9.0
-ENV PYTHON_WHEEL_VERSION=0.45.1
 
 ###
-# Install the specified versions of pip, setuptools, and wheel into the system
-# Python environment; install the specified versions of black and click into the system
-# Python environment.
+# Install the specified versions of pip and setuptools into the system
+# Python environment; install the specified versions of black and
+# click into the system Python environment.
 ###
 RUN python3 -m pip install --no-cache-dir --upgrade \
         pip==${PYTHON_PIP_VERSION} \
         setuptools==${PYTHON_SETUPTOOLS_VERSION} \
-        wheel==${PYTHON_WHEEL_VERSION} \
     && python3 -m pip install --no-cache-dir --upgrade \
         black==${PYTHON_BLACK_VERSION} \
         click==${PYTHON_CLICK_VERSION}

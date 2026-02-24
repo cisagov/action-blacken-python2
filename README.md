@@ -14,9 +14,9 @@ to format Python 2 source code using [`black`](https://github.com/psf/black).
 <!-- Hack to work around markdownlint's MD028/no-blanks-blockquote rule. -->
 
 > [!NOTE]
-> Changes made by this action are only available for the workflow job that runs this
-> action. A consuming workflow job would need to commit and push the modified
-> files for them to persist.
+> Changes made by this action are only available for the workflow job
+> that runs this action. A consuming workflow job would need to commit
+> and push the modified files for them to persist.
 
 ## Usage ##
 
