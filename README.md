@@ -25,7 +25,7 @@ to format Python 2 source code using [`black`](https://github.com/psf/black).
 None.
 <!--
 | Name | Description | Interpreted Type | Default | Required |
-|------|-------------|------------------|---------|:--------:|
+| ---- | ----------- | ---------------- | ------- | :------: |
 | input_name | The input's description. | `string` | n/a | yes |
 -->
 
@@ -34,7 +34,7 @@ None.
 None.
 <!--
 | Name | Description | Output Type |
-|------|-------------|-------------|
+| ---- | ----------- | ----------- |
 | output_name | The output's description. | `output_type` |
 -->
 
