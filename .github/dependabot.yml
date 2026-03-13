@@ -7,6 +7,11 @@
 
 updates:
   - directory: /
+    package-ecosystem: docker
+    schedule:
+      interval: weekly
+
+  - directory: /
     ignore:
       # Managed by cisagov/skeleton-generic
       - dependency-name: actions/cache
