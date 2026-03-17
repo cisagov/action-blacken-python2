@@ -14,6 +14,7 @@ FROM docker.io/library/python:3.13.12-alpine3.23
 ###
 ENV PYTHON_BLACK_VERSION=21.12b0
 ENV PYTHON_CLICK_VERSION=8.0.4
+ENV PYTHON_IDENTIFY_VERSION=2.6.18
 ENV PYTHON_PIP_VERSION=25.2
 ENV PYTHON_SETUPTOOLS_VERSION=80.9.0
 
@@ -27,10 +28,13 @@ RUN python3 -m pip install --no-cache-dir --upgrade \
         setuptools==${PYTHON_SETUPTOOLS_VERSION} \
     && python3 -m pip install --no-cache-dir --upgrade \
         black==${PYTHON_BLACK_VERSION} \
-        click==${PYTHON_CLICK_VERSION}
+        click==${PYTHON_CLICK_VERSION} \
+        identify==${PYTHON_IDENTIFY_VERSION}
+
+COPY src/blacken.py .
 
 # Per the GitHub documentation at
 # https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action#accessing-files-created-by-a-container-action
 # the default working directory on the runner is mapped to /github/workspace on the
 # container.
-CMD ["black", "--fast", "/github/workspace"]
+CMD ["python", "blacken.py", "--path", "/github/workspace"]
