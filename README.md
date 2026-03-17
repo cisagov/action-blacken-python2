@@ -58,7 +58,7 @@ jobs:
       - name: Checkout the Python 2 project
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Format the Python 2 project
-        uses: cisagov/action-blacken-python2@v1.0.0
+        uses: cisagov/action-blacken-python2@v1.1.0
 ```
 
 ## Contributing ##
