@@ -11,7 +11,7 @@ updates:
       # Python 3.14 has changes to the asyncio library that are incompatible
       # with the versions of black and click that we need to use. Therefore, we
       # must stay on Python 3.13.
-      - dependency-name: docker.io/library/python
+      - dependency-name: library/python
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
