@@ -31,10 +31,10 @@ RUN python3 -m pip install --no-cache-dir --upgrade \
         click==${PYTHON_CLICK_VERSION} \
         identify==${PYTHON_IDENTIFY_VERSION}
 
-COPY src/blacken.py .
+COPY src/blacken.py /opt
 
 # Per the GitHub documentation at
 # https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action#accessing-files-created-by-a-container-action
 # the default working directory on the runner is mapped to /github/workspace on the
 # container.
-CMD ["python", "blacken.py", "--path", "/github/workspace"]
+CMD ["python", "/opt/blacken.py", "--path", "/github/workspace"]
