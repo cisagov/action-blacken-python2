@@ -52,7 +52,15 @@ def main():
     # Since we are building the list of paths that are passed to the function call we
     # can safely ignore B603:subprocess_without_shell_equals_true.
     black = subprocess.run(  # nosec B603
-        [sys.executable, "-m", "black", "--fast", *paths_to_blacken],
+        [
+            sys.executable,
+            "-m",
+            "black",
+            "--fast",
+            "--target-version",
+            "py27",
+            *paths_to_blacken,
+        ],
         capture_output=True,
         text=True,
     )
