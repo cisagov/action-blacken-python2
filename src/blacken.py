@@ -17,7 +17,11 @@ def main():
         description="Given a path, find all Python files without a '.py' extension and call black on the given path and these files."
     )
     parser.add_argument(
-        "-p", "--path", action="store", help="Path to search for Python files."
+        "-p",
+        "--path",
+        action="store",
+        help="Path to search for Python files.",
+        required=True,
     )
     args = parser.parse_args()
 
