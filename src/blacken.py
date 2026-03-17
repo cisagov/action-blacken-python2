@@ -38,7 +38,7 @@ def main():
     # If we were given a directory then search for Python files. We will add any file
     # path that looks like a Python file but does not have a '.py' extension.
     if root_path.is_dir():
-        for root, dirs, files in os.walk(root_path):
+        for root, _, files in os.walk(root_path):
             for file in files:
                 file_path = Path(root, file)
                 if "python" in identify.tags_from_path(file_path):
