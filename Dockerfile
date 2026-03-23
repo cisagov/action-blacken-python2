@@ -37,4 +37,5 @@ COPY src/blacken.py /opt
 # https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action#accessing-files-created-by-a-container-action
 # the default working directory on the runner is mapped to /github/workspace on the
 # container.
-CMD ["python", "/opt/blacken.py", "--path", "/github/workspace"]
+ENTRYPOINT ["python", "/opt/blacken.py"]
+CMD ["--path", "/github/workspace"]
