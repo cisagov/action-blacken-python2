@@ -14,7 +14,10 @@ from identify import identify
 def main():
     """Build a list of paths to blacken and then call black."""
     parser = argparse.ArgumentParser(
-        description="Given a path, find all Python files without a '.py' extension and call black on the given path and these files."
+        description=(
+            "Given a path, find all Python files without a '.py' extension "
+            "and call black on the given path and these files."
+        )
     )
     parser.add_argument(
         "-p",
@@ -43,7 +46,8 @@ def main():
                 file_path = Path(root, file)
                 if "python" in identify.tags_from_path(file_path):
                     python_files_found += 1
-                    # We only care about Python files that do not have a '.py' extension here
+                    # We only care about Python files that do not have a
+                    # '.py' extension here.
                     if not file.lower().endswith(".py"):
                         paths_to_blacken.append(file_path)
 
