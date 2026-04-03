@@ -9,9 +9,9 @@ FROM docker.io/library/python:3.13.12-alpine3.23
 COPY src/requirements-actually-constraints.txt /tmp/constraints.txt
 
 ###
-# Install the specified versions of pip and setuptools into the system
-# Python environment; install the specified versions of black and
-# click into the system Python environment.
+# Install the specified versions of pip and setuptools into the system Python
+# environment and then install the specified versions of black, click, and identify
+# into the system Python environment.
 #
 # Note that we use the --constraint flag to specify a pip constraints
 # file that controls which package versions are installed. Please see
