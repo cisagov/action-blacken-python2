@@ -10,8 +10,9 @@ COPY src/requirements-actually-constraints.txt /tmp/constraints.txt
 
 ###
 # Install the specified versions of pip and setuptools into the system Python
-# environment and then install the specified versions of black, click, and identify
-# into the system Python environment.
+# environment, install the specified versions of black, click, and identify
+# into the system Python environment, and then remove the pip constraints file we
+# use to specify the versions of the aforementioned packages.
 #
 # Note that we use the --constraint flag to specify a pip constraints
 # file that controls which package versions are installed. Please see
@@ -26,7 +27,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade \
         --constraint /tmp/constraints.txt \
         black \
         click \
-        identify
+        identify \
+    && rm /tmp/constraints.txt
 
 COPY src/blacken.py /opt
 
