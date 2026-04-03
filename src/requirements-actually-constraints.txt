@@ -13,5 +13,5 @@
 black==21.12b0
 click==8.0.4
 identify==2.6.18
-pip==25.2
+pip==26.0.1
 setuptools==80.9.0
