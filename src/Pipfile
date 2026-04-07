@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+# List any Python dependencies for the image here
+[packages]
+# This version of black is the last version to support formatting Python 2 code.
+black = "21.12b0"
+# This version of click is the last version compatible with the version of black
+# we need to use.
+click = "8.0.4"
+# Oldest version with verified functionality
+identify = ">=2.6.18"
+
+# This version should match the version of Python in the image
+[requires]
+python_full_version = "3.13.12"
