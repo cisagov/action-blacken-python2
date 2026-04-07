@@ -11,7 +11,7 @@
 # we need to use.
 ###
 black==21.12b0
-click==8.0.4
+click==8.3.2
 identify==2.6.18
 pip==26.0.1
 setuptools==80.9.0
