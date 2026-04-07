@@ -52,6 +52,16 @@ updates:
     schedule:
       interval: weekly
 
+  - directory: /src
+    ignore:
+      # We cannot use newer versions of these packages so it is pointless to get
+      # updates offered.
+      - dependency-name: black
+      - dependency-name: click
+    package-ecosystem: pip
+    schedule:
+      interval: weekly
+
   - directory: /
     package-ecosystem: terraform
     schedule:

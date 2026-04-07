@@ -5,31 +5,30 @@
 # versions of black and click that we need to use.
 FROM docker.io/library/python:3.13.12-alpine3.23
 
-###
-# Versions of the Python packages installed directly
-#
-# This version of black is the last version to support formatting Python 2 code.
-# This version of click is the last version compatible with the version of black
-# we need to use.
-###
-ENV PYTHON_BLACK_VERSION=21.12b0
-ENV PYTHON_CLICK_VERSION=8.0.4
-ENV PYTHON_IDENTIFY_VERSION=2.6.18
-ENV PYTHON_PIP_VERSION=25.2
-ENV PYTHON_SETUPTOOLS_VERSION=80.9.0
+# Copy in the pip constraints file that controls the versions installed below
+COPY src/requirements-actually-constraints.txt /tmp/constraints.txt
 
 ###
-# Install the specified versions of pip and setuptools into the system
-# Python environment; install the specified versions of black and
-# click into the system Python environment.
+# Install the specified versions of pip and setuptools into the system Python
+# environment, install the specified versions of black, click, and identify
+# into the system Python environment, and then remove the pip constraints file we
+# use to specify the versions of the aforementioned packages.
+#
+# Note that we use the --constraint flag to specify a pip constraints
+# file that controls which package versions are installed. Please see
+# the documentation for more information:
+# https://pip.pypa.io/en/stable/user_guide/#constraints-files
 ###
 RUN python3 -m pip install --no-cache-dir --upgrade \
-        pip==${PYTHON_PIP_VERSION} \
-        setuptools==${PYTHON_SETUPTOOLS_VERSION} \
+        --constraint /tmp/constraints.txt \
+        pip \
+        setuptools \
     && python3 -m pip install --no-cache-dir --upgrade \
-        black==${PYTHON_BLACK_VERSION} \
-        click==${PYTHON_CLICK_VERSION} \
-        identify==${PYTHON_IDENTIFY_VERSION}
+        --constraint /tmp/constraints.txt \
+        black \
+        click \
+        identify \
+    && rm /tmp/constraints.txt
 
 COPY src/blacken.py /opt
 

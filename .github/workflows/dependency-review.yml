@@ -95,3 +95,5 @@ jobs:
       - id: dependency-review
         name: Review dependency changes for vulnerabilities and license changes
         uses: actions/dependency-review-action@v4
+        with:
+          config-file: ./.github/dependency-review-config.yml

@@ -1,0 +1,17 @@
+###
+# This is a pip constraints file:
+# https://pip.pypa.io/en/stable/user_guide/#constraints-files
+#
+# Note on the file's name:
+# Since dependabot does not support updating pip constraints files we have to trick
+# it into seeing the file as a pip requirements file to get automatic updates.
+#
+# This version of black is the last version to support formatting Python 2 code.
+# This version of click is the last version compatible with the version of black
+# we need to use.
+###
+black==21.12b0
+click==8.0.4
+identify==2.6.18
+pip==26.0.1
+setuptools==80.9.0

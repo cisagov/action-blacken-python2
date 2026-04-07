@@ -1,0 +1,16 @@
+---
+###
+# This is a configuration file for actions/dependency-review-action. A full list of
+# options can be found in the action's README:
+# https://github.com/actions/dependency-review-action#configuration-options
+###
+
+# A list of GHSAs that we are allowing because they are for packages that cannot
+# be updated.
+allow-ghsas:
+  # CVE-2024-21503
+  # Black vulnerable to Regular Expression Denial of Service (ReDoS)
+  - GHSA-fj7x-q9j7-g6q6
+  # CVE-2026-32274
+  # Black: Arbitrary file writes from unsanitized user input in cache file name
+  - GHSA-3936-cmfr-pm3m
