@@ -3,7 +3,7 @@
 #
 # Python 3.14 has changes to the asyncio library that are incompatible with the
 # versions of black and click that we need to use.
-FROM docker.io/library/python:3.13.12-alpine3.23
+FROM docker.io/library/python:3.13.15-alpine3.23
 
 # Copy in the pip constraints file that controls the versions installed below
 COPY src/requirements-actually-constraints.txt /tmp/constraints.txt
